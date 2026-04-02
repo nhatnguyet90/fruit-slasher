@@ -204,7 +204,7 @@
 </div>
 
 <div id="tap-hint">👆 Tap màn hình để chém nhanh hơn!</div>
-<div id="combo-display" id="combo-display"></div>
+<div id="combo-display"></div>
 
 <button id="upgrade-btn" onclick="upgradeDmg()">
   ⚔️ Nâng sát thương<br>
@@ -475,7 +475,7 @@ function upgradeDmg() {
 }
 function updateUpgradeBtn() {
   const btn = document.getElementById('upgrade-btn');
-  btn.className = coins >= upgradeCost ? 'upgrade-btn' : 'upgrade-btn disabled';
+  btn.classList.toggle('disabled', coins < upgradeCost);
   document.getElementById('coinVal').textContent = coins;
   document.getElementById('upgCost').textContent = upgradeCost;
 }
